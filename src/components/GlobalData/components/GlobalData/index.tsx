@@ -1,6 +1,5 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import { formatToNumber } from 'brazilian-values'
-import { Doughnut } from 'react-chartjs-2'
 import { colors } from 'css/theme'
 import { CardTitle } from 'components/CardTitle/components/CardTitle'
 import { Number } from 'components/Number/components/Number'
@@ -9,18 +8,17 @@ import { Legend } from 'components/Legend/components/Legends'
 import { BarChart } from 'components/BarChart/components/BarChart'
 
 import Styled from './styles'
-import { useBrazilData } from '../../hooks/useBrazilData'
+import { useGlobalData } from '../../hooks/useGlobalData'
 
-export const BrazilData = () => {
-  const brazilData = useBrazilData()
-  console.log(brazilData)
+export const GlobalData = () => {
+  const globalData = useGlobalData()
   return (
     <div>
       <CardTitle>
-        Brasil
+        Global
       </CardTitle>
       <CardSubtitle>
-        <Number>{formatToNumber(brazilData.totalCases)}</Number> casos
+        <Number>{formatToNumber(globalData.totalCases)}</Number> casos
       </CardSubtitle>
       <br />
       <Styled.ChartContainer>
@@ -28,15 +26,15 @@ export const BrazilData = () => {
           data={[
             {
               color: colors.blue,
-              value: brazilData.activeCases
+              value: globalData.activeCases
             },
             {
               color: colors.yellow,
-              value: brazilData.totalRecovered
+              value: globalData.totalRecovered
             },
             {
               color: colors.red,
-              value: brazilData.totalDeaths
+              value: globalData.totalDeaths
             }
           ]}
         />
@@ -46,19 +44,19 @@ export const BrazilData = () => {
         <Legend
           color={colors.blue}
           label='Ativos'
-          value={brazilData.activeCases}
+          value={globalData.activeCases}
         />
 
         <Legend
           color={colors.yellow}
           label='Curados'
-          value={brazilData.totalRecovered}
+          value={globalData.totalRecovered}
         />
 
         <Legend
           color={colors.red}
           label='Óbitos'
-          value={brazilData.totalDeaths}
+          value={globalData.totalDeaths}
         />
       </Styled.MetricsContainer>
     </div>

@@ -39,6 +39,7 @@
   },
   "alias": {
     "components": "./src/components",
-    "css": "./src/css"
+    "css": "./src/css",
+    "types": "./src/types"
   }
 }

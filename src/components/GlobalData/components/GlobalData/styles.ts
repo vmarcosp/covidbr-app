@@ -7,7 +7,7 @@ const MetricsContainer = styled.div`
 `
 
 const ChartContainer = styled.div`
-  margin-top: 24px;
+  margin-top: 24px
 `
 
 const LegendsContainer = styled.div`
@@ -16,13 +16,4 @@ const LegendsContainer = styled.div`
  width:100%;
 `
 
-const ItemContainer = styled.div`
-  display: flex;
-  margin-bottom: 24px;
-  &:nth-child(1) {
-    margin-right: 36px;
-  }
-`
-
-
-export default { MetricsContainer, LegendsContainer, ItemContainer, ChartContainer }
+export default { MetricsContainer, LegendsContainer, ChartContainer }

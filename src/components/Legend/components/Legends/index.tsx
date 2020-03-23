@@ -1,5 +1,5 @@
 import React from 'react'
-import { MetricProps, Metric } from 'components/Metric'
+import { MetricProps, Metric } from 'components/Metric/components/Metric'
 import Styled, { IndicatorProps } from './styles'
 
 type LegendProps = MetricProps & IndicatorProps;

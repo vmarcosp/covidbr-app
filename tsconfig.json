@@ -7,6 +7,9 @@
       ],
       "css/*": [
         "./src/css/*"
+      ],
+      "types/*": [
+        "./src/types/*"
       ]
     },
     "target": "es5",

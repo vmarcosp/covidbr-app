@@ -1,11 +1,7 @@
-export interface BrazilData {
+export interface CovidData {
   totalDeaths: number
   totalCases: number
   totalRecovered: number
   closedCases: number,
   activeCases: number
-}
-
-export interface BrazilDataQuery {
-  brazil: BrazilData
 }

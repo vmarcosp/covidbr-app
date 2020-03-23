@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { Number } from 'components/Number'
+import { Number } from 'components/Number/components/Number'
 import { colors, fontFamily } from 'css/theme'
 import { xs } from 'css/media-query'
 

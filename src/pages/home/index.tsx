@@ -1,8 +1,9 @@
 import React from 'react'
-import Navbar from 'components/Navbar'
+import Navbar from 'components/Navbar/components/Navbar'
 import { Map } from 'components/Map'
-import { MobileCard } from 'components/MobileCard'
+import { MobileCard } from 'components/MobileCard/components/MobileCard'
 import { BrazilData } from 'components/BrazilData/components/BrazilData'
+import { GlobalData } from 'components/GlobalData/components/GlobalData'
 
 export const Home = () => (
   <>
@@ -12,9 +13,7 @@ export const Home = () => (
       <BrazilData />
       <br />
       <br />
-      <br />
-      <br />
-      <BrazilData />
+      <GlobalData />
     </MobileCard>
   </>
 )
