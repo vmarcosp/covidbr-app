@@ -9,7 +9,7 @@ interface ToggleableProps {
 const Container = styled.div<ToggleableProps>`
   padding: 24px 16px;
   box-sizing: border-box;
-  height: calc(100% - 200px);
+  height: calc(100% - 300px);
   position: fixed;
   z-index: 999;
   background: ${colors.white};
@@ -18,7 +18,7 @@ const Container = styled.div<ToggleableProps>`
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
   bottom:${props => props.isOpen
     ? 0 : css`
-    calc(((100% - 200px) / 2) * -1);
+    calc(((100% - 300px) / 2) * -1);
   `};
   transition: 300ms;
   left:0;

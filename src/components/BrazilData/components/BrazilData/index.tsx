@@ -13,7 +13,6 @@ import { useBrazilData } from '../../hooks/useBrazilData'
 
 export const BrazilData = () => {
   const brazilData = useBrazilData()
-  console.log(brazilData)
   return (
     <div>
       <CardTitle>

@@ -4,7 +4,6 @@ import { ApolloProvider } from '@apollo/react-hooks'
 import { Home } from './pages/home'
 
 import 'leaflet/dist/leaflet.css'
-console.log(process.env.API_URL)
 
 const client = new ApolloClient({
   uri: process.env.API_URL

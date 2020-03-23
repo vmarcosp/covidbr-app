@@ -4,22 +4,20 @@ import arrowIcon from './arrow-up.svg'
 import Styled from './styles'
 
 interface MobileCardProps {
-  children: ReactNode
+  children: ReactNode,
+  isOpen: boolean,
+  onToggle: (event: React.MouseEvent) => void
 }
 
-export const MobileCard = ({ children }: MobileCardProps) => {
-  const [isOpen, toggle] = React.useState(false)
-
-  return (
-    <Styled.Container isOpen={isOpen}>
-      <a onClick={() => toggle(!isOpen)}>
-        <Styled.Arrow
-          isOpen={isOpen}
-          src={arrowIcon}
-          alt="Arrow icon"
-        />
-      </a>
-      {children}
-    </Styled.Container>
-  )
-}
+export const MobileCard = ({ children, isOpen, onToggle }: MobileCardProps) => (
+  <Styled.Container isOpen={isOpen}>
+    <a onClick={onToggle}>
+      <Styled.Arrow
+        isOpen={isOpen}
+        src={arrowIcon}
+        alt="Arrow icon"
+      />
+    </a>
+    {children}
+  </Styled.Container>
+)
