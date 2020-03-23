@@ -1,20 +1,29 @@
+import 'leaflet-providers'
+import './config-map'
 import React from 'react'
-import { Map as LeaftletMap, TileLayer } from 'react-leaflet'
+import { Map as LeaftletMap, TileLayer, Marker, Popup } from 'react-leaflet'
+import { LatLng, LatLngLiteral, LatLngTuple } from 'leaflet'
 
-const state = {
-  lat: -14.2350044,
-  lng: -51.9252815
+
+interface MapProps {
+  center?: LatLng | LatLngLiteral | LatLngTuple | undefined,
+  children: React.ReactNode
 }
 
-export const Map = () => (
+const defaultCenter: LatLngTuple = [-14.2350044, -51.9252815]
+
+export const Map = ({ center = defaultCenter, children }: MapProps) => (
   <LeaftletMap
-    zoomControl={false}
     style={{ width: '100vw', height: '100vh', top: 0, left: 0, position: 'fixed' }}
-    center={[state.lat, state.lng]} zoom={4}
+    maxZoom={8}
+    minZoom={4}
+    zoomControl={false}
+    center={center}
+    zoom={4}
   >
     <TileLayer
-      attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      url='https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png'
     />
+    {children}
   </LeaftletMap>
 )

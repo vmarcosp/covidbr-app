@@ -6813,6 +6813,11 @@ lcid@^2.0.0:
   dependencies:
     invert-kv "^2.0.0"
 
+leaflet-providers@^1.9.1:
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/leaflet-providers/-/leaflet-providers-1.9.1.tgz#43b82defe6cfbc33e891c3b7a6a6439a169f343f"
+  integrity sha512-YpJB9y4/nT5NGicU9vuqlttJaCer6paD3J3b8Wrw+IIQvK9dtcdzE9CsTkDg7Dg9FeGp5NEr3hu17xcHbYI/2w==
+
 leaflet@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/leaflet/-/leaflet-1.6.0.tgz#aecbb044b949ec29469eeb31c77a88e2f448f308"

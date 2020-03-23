@@ -8,10 +8,19 @@ const Container = styled.div`
   display: flex;
 `
 
-const Indicator = styled.div<IndicatorProps>`
+const VerticalIcon = styled.div<IndicatorProps>`
   width: 5px;
   background: ${props => props.color};
   margin-right: 6px;
 `
 
-export default { Container, Indicator }
+const CircleIcon = styled.div<IndicatorProps>`
+  width: 8px;
+  height: 8px;
+  margin-top: 3px;
+  border-radius: 50%;
+  background: ${props => props.color};
+  margin-right: 3px;
+`
+
+export default { Container, VerticalIcon, CircleIcon }

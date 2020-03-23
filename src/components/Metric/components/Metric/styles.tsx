@@ -13,6 +13,8 @@ const Label = styled.span`
   color: ${colors.gray};
   font-family: ${fontFamily};
   text-transform: uppercase;
+  margin: 0;
+  padding: 0;
   ${xs(css`
     font-size: 14px;
   `)}
@@ -22,6 +24,8 @@ const Value = styled(Number)`
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
+  margin:0;
+  padding:0;
   color: ${colors.black};
   line-height: 27px;
 `
