@@ -21,6 +21,7 @@
     "react-leaflet": "^2.6.3",
     "react-scripts": "3.4.1",
     "react-swipeable-views": "^0.13.9",
+    "react-use": "^13.27.0",
     "styled-components": "^5.0.1",
     "typescript": "~3.7.2"
   },

@@ -1,7 +1,8 @@
 import React from 'react'
+import { useMedia } from 'react-use'
 import Navbar from 'components/Navbar/components/Navbar'
 import { Map } from 'components/Map'
-import { MobileCard } from 'components/MobileCard/components/MobileCard'
+import { Card } from 'components/Card/components/Card'
 import { BrazilData } from 'components/BrazilData/components/BrazilData'
 import { GlobalData } from 'components/GlobalData/components/GlobalData'
 
@@ -9,20 +10,21 @@ import Styled from './styles'
 import { useHome } from './useHome'
 
 export const Home = () => {
-  const { isOpen, toggleCard } = useHome()
+  const { isOpen, toggleCard, isMobile } = useHome()
 
   return (
     <>
       <Navbar />
       <Map />
-      <MobileCard isOpen={isOpen} onToggle={toggleCard}>
-        <BrazilData />
-        <br />
-        <br />
+      <Card isOpen={isOpen} onToggle={toggleCard}>
+        <Styled.DataContainer>
+          <BrazilData />
+        </Styled.DataContainer>
+        <Styled.Divider />
         <Styled.GlobalDataContainer show={isOpen}>
           <GlobalData />
         </Styled.GlobalDataContainer>
-      </MobileCard>
+      </Card>
     </>
   )
 }
