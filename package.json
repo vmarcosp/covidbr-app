@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "PARCEL_AUTOINSTALL=false parcel public/index.html",
-    "build": "parcel build public/index.html"
+    "build": "NODE_ENV=production parcel build public/index.html --no-source-maps"
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.3",
