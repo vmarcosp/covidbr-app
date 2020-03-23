@@ -1,13 +1,20 @@
 import styled, { css } from 'styled-components'
-import { xs } from 'css/media-query'
+import { xs, sm } from 'css/media-query'
 
 export interface GlobalDataContainerProps {
   show: boolean
 }
 
 const commonContainerStyle = css`
-  padding: 24px;
-  margin-bottom: 32px;
+  box-sizing: border-box;
+  ${xs(css`
+    padding: 16px;
+  `)}
+  ${sm(css`
+    box-sizing: border-box;
+    padding: 24px;
+    margin-bottom: 32px;
+  `)}
 `
 
 const GlobalDataContainer = styled.div<GlobalDataContainerProps>`
