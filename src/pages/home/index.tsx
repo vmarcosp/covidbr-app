@@ -11,7 +11,7 @@ import Styled from './styles'
 import { useHome } from './useHome'
 
 export const Home = () => {
-  const { isOpen, toggleCard, isMobile } = useHome()
+  const { isOpen, toggleCard } = useHome()
 
   return (
     <>
