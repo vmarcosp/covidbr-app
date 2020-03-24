@@ -20,13 +20,17 @@ export const Home = () => {
         <PinList />
       </Map>
       <Card isOpen={isOpen} onToggle={toggleCard}>
+
         <Styled.DataContainer>
           <BrazilData />
         </Styled.DataContainer>
+
         <Styled.Divider />
+
         <Styled.GlobalDataContainer show={isOpen}>
           <GlobalData />
         </Styled.GlobalDataContainer>
+
       </Card>
     </>
   )
