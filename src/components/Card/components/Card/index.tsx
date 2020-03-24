@@ -1,23 +1,26 @@
 import React, { ReactNode } from 'react'
-
+import { useSwipeable, SwipeCallback } from 'react-swipeable'
 import arrowIcon from './arrow-up.svg'
 import Styled from './styles'
 
 interface Card {
   children: ReactNode,
   isOpen: boolean,
-  onToggle: (event: React.MouseEvent) => void
+  onToggle: SwipeCallback
 }
 
-export const Card = ({ children, isOpen, onToggle }: Card) => (
-  <Styled.Container isOpen={isOpen}>
-    <Styled.ArrowButton onClick={onToggle}>
-      <Styled.Arrow
-        isOpen={isOpen}
-        src={arrowIcon}
-        alt="Arrow icon"
-      />
-    </Styled.ArrowButton>
-    {children}
-  </Styled.Container>
-)
+export const Card = ({ children, isOpen, onToggle }: Card) => {
+  const handlers = useSwipeable({ onSwipedUp: onToggle, onSwipedDown: onToggle })
+  return (
+    <Styled.Container {...handlers} isOpen={isOpen}>
+      <Styled.ArrowButton>
+        <Styled.Arrow
+          isOpen={isOpen}
+          src={arrowIcon}
+          alt="Arrow icon"
+        />
+      </Styled.ArrowButton>
+      {children}
+    </Styled.Container>
+  )
+}
