@@ -13,13 +13,13 @@ export const Card = ({ children, isOpen, onToggle }: Card) => {
   const handlers = useSwipeable({ onSwipedUp: onToggle, onSwipedDown: onToggle })
   return (
     <Styled.Container {...handlers} isOpen={isOpen}>
-      <Styled.ArrowButton>
+      {/* <Styled.ArrowButton>
         <Styled.Arrow
           isOpen={isOpen}
           src={arrowIcon}
           alt="Arrow icon"
         />
-      </Styled.ArrowButton>
+      </Styled.ArrowButton> */}
       {children}
     </Styled.Container>
   )
