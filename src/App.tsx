@@ -4,6 +4,7 @@ import { ApolloProvider } from '@apollo/react-hooks'
 import { Home } from './pages/home'
 
 import 'leaflet/dist/leaflet.css'
+import { GlobalStyles } from 'css/GlobalStyle'
 
 const client = new ApolloClient({
   uri: process.env.API_URL
@@ -11,8 +12,7 @@ const client = new ApolloClient({
 
 export const App = () => (
   <ApolloProvider client={client}>
-    <div style={{ height: '100%', width: '100% ' }}>
-      <Home />
-    </div>
+    <GlobalStyles />
+    <Home />
   </ApolloProvider>
 )
