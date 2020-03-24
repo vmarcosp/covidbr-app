@@ -8,4 +8,4 @@ export const colors = {
   green: '#44CDA8'
 }
 
-export const fontFamily = `'Raleway', sans-serif`
+export const fontFamily = '\'Raleway\', sans-serif'

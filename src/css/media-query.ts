@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import { css, FlattenSimpleInterpolation } from 'styled-components'
 
 export const minWidth = (breakpoint: number) => (style: FlattenSimpleInterpolation) => css`
