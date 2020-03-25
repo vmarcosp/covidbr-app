@@ -5,7 +5,7 @@ import styled, { css } from 'styled-components'
 export const CardTitle = styled.h3`
   color: ${colors.black};
   font-family: ${fontFamily};
-  margin: 0;
+  margin: 2px 0;
   ${xs(css`
     font-size: 22px;
   `)}

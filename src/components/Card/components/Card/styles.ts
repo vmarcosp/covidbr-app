@@ -48,25 +48,31 @@ const Container = styled.div<ContainerProps>`
 `
 
 const ArrowIcon = styled.img`
-  @keyframes jumping {
-    0% {
-      top: 12px;
-    }
+  ${xs(css`
+    @keyframes jumping {
+      0% {
+        top: 12px;
+      }
 
-    50% {
-      top: 18px;
-    }
+      50% {
+        top: 18px;
+      }
 
-    100% {
-      top: 12px;
+      100% {
+        top: 12px;
+      }
     }
-  }
-  position: absolute;
-  width: 22px;
-  top: 12px;
-  left: 50%;
-  margin-left: -11px;
-  animation: jumping 1s infinite;
+    position: absolute;
+    width: 22px;
+    top: 12px;
+    left: 50%;
+    margin-left: -11px;
+    animation: jumping 1s infinite;
+  `)}
+
+  ${sm(css`
+    display: none;
+  `)}
 `
 
 export default { Container, ArrowIcon }
