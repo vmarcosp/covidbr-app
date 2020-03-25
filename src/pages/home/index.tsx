@@ -12,19 +12,21 @@ import { Autocomplete } from 'components/Autocomplete/components/Autocomplete'
 import { SelectedData } from 'components/SelectedData/components/SelectedData'
 
 export const Home = () => {
-  const { isOpen, toggleCard, hideCard, searchData, selectedData } = useHome()
+  const { isOpen, toggleCard, showCard, visible, hideCard, searchData, selectedData } = useHome()
 
   return (
     <>
       <Navbar />
       <Autocomplete
         onFocus={hideCard}
+        onBlur={showCard}
         onChange={searchData}
       />
       <Map>
         <PinList />
       </Map>
-      <Card isOpen={isOpen} onToggle={toggleCard}>
+
+      <Card visible={visible} isOpen={isOpen} onToggle={toggleCard}>
 
         <Styled.DataContainer>
           {selectedData.infos !== null

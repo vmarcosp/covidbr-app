@@ -18,11 +18,14 @@ const intialData = {
 export const useHome = () => {
   const [selectedData, setCardData] = useState<SelectedData>(intialData)
   const [isOpen, toggle] = useState(false)
+  const [visible, setVisible] = useState(true)
   const isMobile = useMedia(MOBILE_QUERY)
 
   const toggleCard = () => toggle(!isOpen)
 
-  const hideCard = () => toggle(false)
+  const hideCard = () => setVisible(false)
+
+  const showCard = () => setVisible(true)
 
   const searchStateByUf = async (uf: string) => {
     const { data } = await client.query<StateQuery>({
@@ -61,10 +64,12 @@ export const useHome = () => {
   }
 
   return {
-    isOpen,
     toggleCard,
-    isMobile,
     hideCard,
+    showCard,
+    visible,
+    isOpen,
+    isMobile,
     searchData,
     selectedData
   }

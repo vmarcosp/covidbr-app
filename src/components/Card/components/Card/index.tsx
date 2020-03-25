@@ -6,13 +6,14 @@ import Styled from './styles'
 interface Card {
   children: ReactNode,
   isOpen: boolean,
-  onToggle: SwipeCallback
+  onToggle: SwipeCallback,
+  visible: boolean
 }
 
-export const Card = ({ children, isOpen, onToggle }: Card) => {
+export const Card = ({ children, isOpen, onToggle, visible }: Card) => {
   const handlers = useSwipeable({ onSwipedUp: onToggle, onSwipedDown: onToggle })
   return (
-    <Styled.Container {...handlers} isOpen={isOpen}>
+    <Styled.Container {...handlers} visible={visible} isOpen={isOpen}>
       {children}
     </Styled.Container>
   )
