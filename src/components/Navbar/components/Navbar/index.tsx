@@ -1,7 +1,7 @@
 import React from 'react'
 import Styled from './styles'
 import logoImage from './logo.svg'
-import githubImage from './github-icon.png'
+import githubImage from './github-logo.svg'
 
 const Navbar = () => (
   <Styled.Container>

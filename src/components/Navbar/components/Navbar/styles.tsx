@@ -2,11 +2,11 @@ import styled from 'styled-components'
 import { colors } from 'css/theme'
 
 const Logo = styled.img`
-  width: 120px;
+  width: 100px;
 `
 
 const GithubIcon = styled.img`
-  width: 32px;
+  width: 28px;
 `
 
 const Container = styled.div`
