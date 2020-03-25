@@ -13,6 +13,7 @@
     "apollo-boost": "^0.4.7",
     "brazilian-values": "^0.7.4",
     "chart.js": "^2.9.3",
+    "fp-ts": "^2.5.3",
     "graphql": "^14.6.0",
     "leaflet": "^1.6.0",
     "leaflet-providers": "^1.9.1",

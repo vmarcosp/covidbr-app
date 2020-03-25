@@ -1,6 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components'
 import { fontFamily, colors } from 'css/theme'
-import { Legend as RealLegend } from 'components/Legend/components/Legends'
 
 export const CustomPopUpStyles = createGlobalStyle`
   .custom-popup .leaflet-popup-content-wrapper {
@@ -14,6 +13,7 @@ export const CustomPopUpStyles = createGlobalStyle`
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    min-width: 200px;
   }
 
   .leaflet-container {
@@ -22,6 +22,10 @@ export const CustomPopUpStyles = createGlobalStyle`
 
   .leaflet-container a.leaflet-popup-close-button {
     font: 24px/24px Tahoma, Verdana, sans-serif;
+  }
+
+  .state-pin-icon {
+    z-index: 4000!important;
   }
 `
 
