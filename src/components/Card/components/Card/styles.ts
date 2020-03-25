@@ -47,18 +47,26 @@ const Container = styled.div<ContainerProps>`
   }
 `
 
-const SwipeIcon = styled.div`
-  ${xs(css`
-    width: 100px;
-    height: 4px;
-    border-radius: 4px;
-    opacity: 0.2;
-    background: ${colors.gray};
-    position: absolute;
-    top: 12px;
-    left: 50%;
-    margin-left: -50px;
-  `)}
+const ArrowIcon = styled.img`
+  @keyframes jumping {
+    0% {
+      top: 12px;
+    }
+
+    50% {
+      top: 18px;
+    }
+
+    100% {
+      top: 12px;
+    }
+  }
+  position: absolute;
+  width: 22px;
+  top: 12px;
+  left: 50%;
+  margin-left: -11px;
+  animation: jumping 1s infinite;
 `
 
-export default { Container, SwipeIcon }
+export default { Container, ArrowIcon }

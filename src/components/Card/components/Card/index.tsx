@@ -1,5 +1,7 @@
 import React, { ReactNode } from 'react'
 import { useSwipeable, SwipeCallback } from 'react-swipeable'
+
+import arrowIcon from 'assets/arrow.svg'
 import { PinLegend } from 'components/PinLegend/components/PinLegend'
 import Styled from './styles'
 
@@ -15,8 +17,8 @@ export const Card = ({ children, isOpen, onToggle, visible }: Card) => {
   return (
     <Styled.Container {...handlers} visible={visible} isOpen={isOpen}>
       {children}
-      <Styled.SwipeIcon />
       <PinLegend />
+      <Styled.ArrowIcon src={arrowIcon} alt="Arrow icon" />
     </Styled.Container>
   )
 }
