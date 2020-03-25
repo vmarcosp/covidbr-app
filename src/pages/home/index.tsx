@@ -9,6 +9,7 @@ import { GlobalData } from 'components/GlobalData/components/GlobalData'
 
 import Styled from './styles'
 import { useHome } from './useHome'
+import { Autocomplete } from 'components/Autocomplete/components/Autocomplete'
 
 export const Home = () => {
   const { isOpen, toggleCard } = useHome()
@@ -16,6 +17,7 @@ export const Home = () => {
   return (
     <>
       <Navbar />
+      <Autocomplete />
       <Map>
         <PinList />
       </Map>

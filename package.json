@@ -37,6 +37,7 @@
     "@types/react-chartjs-2": "^2.5.7",
     "@types/react-dom": "^16.9.0",
     "@types/react-leaflet": "^2.5.1",
+    "@types/react-select": "^3.0.11",
     "@types/react-swipeable-views": "^0.13.0",
     "@types/styled-components": "^5.0.1",
     "@typescript-eslint/eslint-plugin": "^2.25.0",
