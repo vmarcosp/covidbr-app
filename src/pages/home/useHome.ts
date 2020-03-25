@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { ValueType } from 'react-select'
 import { useMedia } from 'react-use'
+import { LatLngTuple } from 'leaflet'
 
 import { Option, OptionType } from 'components/Autocomplete/hooks/types'
 
@@ -13,6 +14,20 @@ const MOBILE_QUERY = '(max-width: 600px)'
 const intialData = {
   show: false,
   infos: null
+}
+
+const defaultCenter: LatLngTuple = [-14.2350044, -51.9252815]
+
+const getCenter = ({ infos }: SelectedData): LatLngTuple => {
+  if (infos === null) return defaultCenter
+
+  return [infos.latitude, infos.longitude]
+}
+
+const getZoom = ({ infos }: SelectedData, isMobile: boolean) => {
+  if (infos === null) return 4
+
+  return isMobile ? 6 : 7
 }
 
 export const useHome = () => {
@@ -61,6 +76,7 @@ export const useHome = () => {
     } else {
       searchCityById(option.value.id)
     }
+    showCard()
   }
 
   return {
@@ -71,6 +87,8 @@ export const useHome = () => {
     isOpen,
     isMobile,
     searchData,
-    selectedData
+    selectedData,
+    center: getCenter(selectedData),
+    zoom: getZoom(selectedData, isMobile)
   }
 }

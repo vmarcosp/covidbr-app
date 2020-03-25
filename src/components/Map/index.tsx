@@ -4,14 +4,12 @@ import { Map as LeaftletMap, TileLayer } from 'react-leaflet'
 import { LatLng, LatLngLiteral, LatLngTuple } from 'leaflet'
 
 interface MapProps {
-  center?: LatLng | LatLngLiteral | LatLngTuple,
-  zoom?: number
+  center: LatLng | LatLngLiteral | LatLngTuple,
+  zoom: number
   children: React.ReactNode
 }
 
-const defaultCenter: LatLngTuple = [-14.2350044, -51.9252815]
-
-export const Map = ({ center = defaultCenter, children, zoom }: MapProps) => (
+export const Map = ({ center, children, zoom }: MapProps) => (
   <LeaftletMap
     style={{ width: '100vw', height: '100vh', top: 0, left: 0, position: 'fixed' }}
     maxZoom={10}

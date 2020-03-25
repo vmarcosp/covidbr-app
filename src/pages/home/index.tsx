@@ -12,7 +12,7 @@ import { Autocomplete } from 'components/Autocomplete/components/Autocomplete'
 import { SelectedData } from 'components/SelectedData/components/SelectedData'
 
 export const Home = () => {
-  const { isOpen, toggleCard, showCard, visible, hideCard, searchData, selectedData } = useHome()
+  const { isOpen, center, zoom, toggleCard, showCard, visible, hideCard, searchData, selectedData } = useHome()
 
   return (
     <>
@@ -23,7 +23,7 @@ export const Home = () => {
         onChange={searchData}
       />
 
-      <Map zoom={selectedData.infos ? 8 : 4} center={selectedData.infos ? [selectedData.infos.latitude, selectedData.infos.longitude] : undefined}>
+      <Map zoom={zoom} center={center}>
         <PinList />
       </Map>
 
