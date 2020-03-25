@@ -7,6 +7,10 @@ interface ContainerProps {
   visible: boolean
 }
 
+interface ArrowProps {
+  isOpen: boolean
+}
+
 const Container = styled.div<ContainerProps>`
   background: ${colors.white};
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
@@ -47,8 +51,8 @@ const Container = styled.div<ContainerProps>`
   }
 `
 
-const ArrowIcon = styled.img`
-  ${xs(css`
+const ArrowIcon = styled.img<ArrowProps>`
+  ${props => xs(css`
     @keyframes jumping {
       0% {
         top: 12px;
@@ -68,6 +72,7 @@ const ArrowIcon = styled.img`
     left: 50%;
     margin-left: -11px;
     animation: jumping 1s infinite;
+    transform: ${props.isOpen ? 'rotate(180deg)' : 'rotate(0)'};
   `)}
 
   ${sm(css`
@@ -75,4 +80,11 @@ const ArrowIcon = styled.img`
   `)}
 `
 
-export default { Container, ArrowIcon }
+export const ArrowContainer = styled.button`
+  border: 0;
+  background: 0;
+  padding: 0;
+  margin: 0;
+`
+
+export default { Container, ArrowIcon, ArrowContainer }

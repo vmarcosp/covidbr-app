@@ -9,16 +9,23 @@ interface Card {
   children: ReactNode,
   isOpen: boolean,
   onToggle: SwipeCallback,
+  onClick: (event: React.MouseEvent) => void,
   visible: boolean
 }
 
-export const Card = ({ children, isOpen, onToggle, visible }: Card) => {
+export const Card = ({ children, isOpen, onToggle, visible, onClick }: Card) => {
   const handlers = useSwipeable({ onSwipedUp: onToggle, onSwipedDown: onToggle })
   return (
     <Styled.Container {...handlers} visible={visible} isOpen={isOpen}>
       {children}
       <PinLegend />
-      <Styled.ArrowIcon src={arrowIcon} alt="Arrow icon" />
+      <Styled.ArrowContainer onClick={onClick}>
+        <Styled.ArrowIcon
+          isOpen={isOpen}
+          src={arrowIcon}
+          alt="Arrow icon"
+        />
+      </Styled.ArrowContainer>
     </Styled.Container>
   )
 }

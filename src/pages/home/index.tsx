@@ -27,7 +27,12 @@ export const Home = () => {
         <PinList />
       </Map>
 
-      <Card visible={visible} isOpen={isOpen} onToggle={toggleCard}>
+      <Card
+        onClick={toggleCard}
+        visible={visible}
+        isOpen={isOpen}
+        onToggle={toggleCard}
+      >
 
         <Styled.DataContainer>
           {selectedData.infos !== null
