@@ -43,7 +43,7 @@ const Container = styled.div<ContainerProps>`
     width: 400px;
     z-index: 999;
     position: fixed;
-    left: 24px;
+    right: 24px;
     bottom: 42px;
     border-radius: 4px;
     min-height: 455px;

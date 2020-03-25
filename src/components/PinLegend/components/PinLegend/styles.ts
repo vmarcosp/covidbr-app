@@ -13,11 +13,11 @@ const Container = styled.div`
   box-sizing: border-box;
 
   ${xs(css`
-    left: 12px;
+    right: 12px;
   `)}
 
   ${sm(css`
-    left: 0;
+    right: 0;
   `)}
 `
 
