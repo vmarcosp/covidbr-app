@@ -1,4 +1,5 @@
 import React, { useRef } from 'react'
+import QueueAnim from 'rc-queue-anim'
 import { formatToNumber } from 'brazilian-values'
 import { colors } from 'css/theme'
 
@@ -16,43 +17,53 @@ interface SelectedDataProps {
   data: CityData | StateData
 }
 
-export const SelectedData = ({ data }: SelectedDataProps) => {
-  return (
-    <div>
-      <CardTitle>
-        {data.name}
-      </CardTitle>
-      <CardSubtitle>
-        <Number>{formatToNumber(data.cases)}</Number> casos
-      </CardSubtitle>
-      <br />
-      <Styled.ChartContainer>
-        <BarChart
-          data={[
-            {
-              color: colors.blue,
-              value: data.casesMS
-            },
-            {
-              color: colors.red,
-              value: data.deaths
-            }
-          ]}
-        />
-      </Styled.ChartContainer>
+export const SelectedData = ({ data }: SelectedDataProps) => (
+  <QueueAnim
+    type='bottom'
+    delay={500}
+    duration={800}
+  >
+    <CardTitle key={1}>
+      {data.name}
+    </CardTitle>
 
-      <Styled.MetricsContainer>
-        <Legend
-          color={colors.blue}
-          label='Ativos'
-          value={data.casesMS}
-        />
-        <Legend
-          color={colors.red}
-          label='Óbitos'
-          value={data.deaths}
-        />
-      </Styled.MetricsContainer>
-    </div>
-  )
-}
+    <CardSubtitle key={2}>
+      <Number>{formatToNumber(data.cases)}</Number> casos
+    </CardSubtitle>
+
+    <Styled.ChartContainer key={3}>
+      <BarChart
+        data={[
+          {
+            color: colors.blue,
+            value: data.casesMS
+          },
+          {
+            color: colors.red,
+            value: data.deaths
+          }
+        ]}
+      />
+    </Styled.ChartContainer>
+
+    <QueueAnim
+      component={Styled.MetricsContainer}
+      type='bottom'
+      delay={800}
+      duration={600}
+    >
+      <Legend
+        key={1}
+        color={colors.blue}
+        label='Ativos'
+        value={data.casesMS}
+      />
+      <Legend
+        key={2}
+        color={colors.red}
+        label='Óbitos'
+        value={data.deaths}
+      />
+    </QueueAnim>
+  </QueueAnim>
+)

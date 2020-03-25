@@ -1,4 +1,5 @@
 import React from 'react'
+import QueueAnim from 'rc-queue-anim'
 import { formatToNumber } from 'brazilian-values'
 import { colors } from 'css/theme'
 import { CardTitle } from 'components/CardTitle/components/CardTitle'
@@ -15,15 +16,20 @@ export const GlobalData = () => {
   const { globalData, loading } = useGlobalData()
   return (
     !loading
-      ? <div>
-        <CardTitle>
-        Global
+      ? <QueueAnim
+        type='bottom'
+        delay={500}
+        duration={800}
+      >
+        <CardTitle key={1}>
+          Global
         </CardTitle>
-        <CardSubtitle>
+
+        <CardSubtitle key={2}>
           <Number>{formatToNumber(globalData.totalCases)}</Number> casos
         </CardSubtitle>
-        <br />
-        <Styled.ChartContainer>
+
+        <Styled.ChartContainer key={3}>
           <BarChart
             data={[
               {
@@ -42,26 +48,34 @@ export const GlobalData = () => {
           />
         </Styled.ChartContainer>
 
-        <Styled.MetricsContainer>
+        <QueueAnim
+          component={Styled.MetricsContainer}
+          type='bottom'
+          delay={800}
+          duration={600}
+        >
           <Legend
+            key={1}
             color={colors.blue}
             label='Ativos'
             value={globalData.activeCases}
           />
 
           <Legend
+            key={2}
             color={colors.yellow}
             label='Curados'
             value={globalData.totalRecovered}
           />
 
           <Legend
+            key={3}
             color={colors.red}
             label='Óbitos'
             value={globalData.totalDeaths}
           />
-        </Styled.MetricsContainer>
-      </div>
+        </QueueAnim>
+      </QueueAnim>
       : <Loader size={6} />
   )
 }

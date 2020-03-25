@@ -1,7 +1,8 @@
 import React from 'react'
+import QueueAnim from 'rc-queue-anim'
 import { formatToNumber } from 'brazilian-values'
-import { colors } from 'css/theme'
 
+import { colors } from 'css/theme'
 import { CardTitle } from 'components/CardTitle/components/CardTitle'
 import { Number } from 'components/Number/components/Number'
 import { CardSubtitle } from 'components/CardSubtitle/components/CardSubtitle'
@@ -16,14 +17,18 @@ export const BrazilData = () => {
   const { brazilData, loading } = useBrazilData()
   return (
     !loading
-      ? <div>
-        <CardTitle> Brasil </CardTitle>
+      ? <QueueAnim
+        type='bottom'
+        delay={600}
+        duration={800}
+      >
+        <CardTitle key={1}> Brasil </CardTitle>
 
-        <CardSubtitle>
+        <CardSubtitle key={2}>
           <Number>{formatToNumber(brazilData.totalCases)}</Number> casos
         </CardSubtitle>
 
-        <Styled.ChartContainer>
+        <Styled.ChartContainer key={3}>
           <BarChart
             data={[
               {
@@ -42,26 +47,34 @@ export const BrazilData = () => {
           />
         </Styled.ChartContainer>
 
-        <Styled.MetricsContainer>
+        <QueueAnim
+          component={Styled.MetricsContainer}
+          type='bottom'
+          delay={800}
+          duration={600}
+        >
           <Legend
+            key={1}
             color={colors.blue}
             label='Ativos'
             value={brazilData.activeCases}
           />
 
           <Legend
+            key={2}
             color={colors.yellow}
             label='Curados'
             value={brazilData.totalRecovered}
           />
 
           <Legend
+            key={3}
             color={colors.red}
             label='Óbitos'
             value={brazilData.totalDeaths}
           />
-        </Styled.MetricsContainer>
-      </div>
+        </QueueAnim>
+      </QueueAnim>
       : <Loader size={6} />
   )
 }
