@@ -9,12 +9,8 @@ const GithubIcon = styled.img`
   width: 32px;
 `
 
-const GithubLink = styled.a`
-
-`
-
 const Container = styled.div`
-  background: ${colors.black};
+  /* background: ${colors.black}; */
   padding: 0 24px;
   position: fixed;
   top:0;
