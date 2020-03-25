@@ -7,7 +7,7 @@ import { Home } from './pages/home'
 
 import 'leaflet/dist/leaflet.css'
 
-const client = new ApolloClient({
+export const client = new ApolloClient({
   uri: process.env.API_URL
 })
 

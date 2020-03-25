@@ -1,51 +1,41 @@
 import { useLazyQuery } from '@apollo/react-hooks'
 import { fromNullable, fold } from 'fp-ts/lib/Option'
-import * as R from 'rambda'
 
 import { StatesCitiesQuery } from './StatesCitiesQuery'
+import {
+  Option,
+  OptionType,
+  StateData,
+  CityData,
+  QueryResult
+} from './types'
 
-interface CityData {
-  id: string
-  name: string
-  uf: string
-}
-
-interface StateData {
-  name: string
-  uf: string
-}
-
-interface QueryResult {
-  cities: CityData[]
-  states: StateData[]
-}
-
-interface Option {
-  label: string
-  value: string
-}
-
-const optionsOfStates = (states: StateData[]) => states.map(({ name, uf }) => ({
+const toOptionState = ({ name, uf }: StateData): Option => ({
   label: name,
-  value: uf
-}))
+  value: {
+    id: uf,
+    type: OptionType.STATE
+  }
+})
 
-const optionsOfCities = (cities: CityData[]) => cities.map(({ name, id, uf }) => ({
+const toOptionCity = ({ name, uf, id }: CityData): Option => ({
   label: `${name}, ${uf}`,
-  value: id
-}))
+  value: {
+    id,
+    type: OptionType.CITY
+  }
+})
+
+const optionsOfStates = (states: StateData[] = []) => states.map(toOptionState)
+
+const optionsOfCities = (cities: CityData[] = []) => cities.map(toOptionCity)
 
 const toOptions = fold(
   () => ([]),
-  (data: QueryResult) => {
-    const cities = R.propOr<CityData[], QueryResult, CityData[]>([], 'cities', data)
-    const states = R.propOr<StateData[], QueryResult, StateData[]>([], 'states', data)
-
-    return [
-      ...optionsOfCities(cities),
-      ...optionsOfStates(states)
-    ]
-  }
+  (data: QueryResult) => [
+    ...optionsOfCities(data.cities),
+    ...optionsOfStates(data.states)
+  ]
 )
 
 export const useAutocomplete = () => {

@@ -1,5 +1,4 @@
 import React from 'react'
-import { useMedia } from 'react-use'
 import Navbar from 'components/Navbar/components/Navbar'
 import { Map } from 'components/Map'
 import { Card } from 'components/Card/components/Card'
@@ -10,21 +9,30 @@ import { GlobalData } from 'components/GlobalData/components/GlobalData'
 import Styled from './styles'
 import { useHome } from './useHome'
 import { Autocomplete } from 'components/Autocomplete/components/Autocomplete'
+import { SelectedData } from 'components/SelectedData/components/SelectedData'
 
 export const Home = () => {
-  const { isOpen, toggleCard } = useHome()
+  const { isOpen, toggleCard, hideCard, searchData, selectedData } = useHome()
 
   return (
     <>
       <Navbar />
-      <Autocomplete />
+      <Autocomplete
+        onFocus={hideCard}
+        onChange={searchData}
+      />
       <Map>
         <PinList />
       </Map>
       <Card isOpen={isOpen} onToggle={toggleCard}>
 
         <Styled.DataContainer>
-          <BrazilData />
+          {selectedData.infos !== null
+            ? <SelectedData
+              data={selectedData.infos}
+            />
+            : <BrazilData />
+          }
         </Styled.DataContainer>
 
         <Styled.Divider />

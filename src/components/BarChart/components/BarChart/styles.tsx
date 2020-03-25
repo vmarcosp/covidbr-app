@@ -7,19 +7,11 @@ const Container = styled.div`
 
 const ChartItem = styled.div<BarChartData>`
   width: ${props => props.value}%;
-  min-width: 10px;
-  height: 8px;
+  min-width: 12px;
+  height: 12px;
   background: ${props => props.color};
   margin: 2px;
-  &:first-child{
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
-  }
-
-  &:last-child{
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
-  }
+  border-radius: 10px;
 `
 
 export default { Container, ChartItem }

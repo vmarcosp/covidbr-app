@@ -2,10 +2,8 @@ import styled from 'styled-components'
 
 const MetricsContainer = styled.div`
   display: flex;
+  justify-content: space-between;
   margin-top: 16px;
-  > * {
-    margin-right: 32px;
-  } 
 `
 
 const ChartContainer = styled.div`
@@ -25,5 +23,6 @@ const ItemContainer = styled.div`
     margin-right: 36px;
   }
 `
+
 
 export default { MetricsContainer, LegendsContainer, ItemContainer, ChartContainer }

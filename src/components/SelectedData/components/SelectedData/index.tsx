@@ -1,6 +1,9 @@
 import React, { useRef } from 'react'
 import { formatToNumber } from 'brazilian-values'
 import { colors } from 'css/theme'
+
+import { CityData, StateData } from 'pages/home/types'
+import { OptionType } from 'components/Autocomplete/hooks/types'
 import { CardTitle } from 'components/CardTitle/components/CardTitle'
 import { Number } from 'components/Number/components/Number'
 import { CardSubtitle } from 'components/CardSubtitle/components/CardSubtitle'
@@ -8,17 +11,19 @@ import { Legend } from 'components/Legend/components/Legends'
 import { BarChart } from 'components/BarChart/components/BarChart'
 
 import Styled from './styles'
-import { useBrazilData } from '../../hooks/useBrazilData'
 
-export const BrazilData = () => {
-  const brazilData = useBrazilData()
+interface SelectedDataProps {
+  data: CityData | StateData
+}
+
+export const SelectedData = ({ data }: SelectedDataProps) => {
   return (
     <div>
       <CardTitle>
-        Brasil
+        {data.name}
       </CardTitle>
       <CardSubtitle>
-        <Number>{formatToNumber(brazilData.totalCases)}</Number> casos
+        <Number>{formatToNumber(data.cases)}</Number> casos
       </CardSubtitle>
       <br />
       <Styled.ChartContainer>
@@ -26,15 +31,11 @@ export const BrazilData = () => {
           data={[
             {
               color: colors.blue,
-              value: brazilData.activeCases
-            },
-            {
-              color: colors.yellow,
-              value: brazilData.totalRecovered
+              value: data.casesMS
             },
             {
               color: colors.red,
-              value: brazilData.totalDeaths
+              value: data.deaths
             }
           ]}
         />
@@ -44,19 +45,12 @@ export const BrazilData = () => {
         <Legend
           color={colors.blue}
           label='Ativos'
-          value={brazilData.activeCases}
+          value={data.casesMS}
         />
-
-        <Legend
-          color={colors.yellow}
-          label='Curados'
-          value={brazilData.totalRecovered}
-        />
-
         <Legend
           color={colors.red}
           label='Óbitos'
-          value={brazilData.totalDeaths}
+          value={data.deaths}
         />
       </Styled.MetricsContainer>
     </div>

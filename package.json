@@ -55,6 +55,7 @@
   },
   "alias": {
     "components": "./src/components",
+    "pages": "./src/pages",
     "css": "./src/css",
     "types": "./src/types"
   }
