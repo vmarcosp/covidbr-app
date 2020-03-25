@@ -5,7 +5,7 @@ import { colors } from 'css/theme'
 export const customStyles: StylesConfig = {
   singleValue: (provided: CSSProperties) => ({
     ...provided,
-    color: '#878787'
+    color: colors.black
   }),
   valueContainer: (provided: CSSProperties) => ({
     ...provided,

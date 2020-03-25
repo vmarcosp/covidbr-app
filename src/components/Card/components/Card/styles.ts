@@ -2,7 +2,6 @@ import styled, { css } from 'styled-components'
 import { colors } from 'css/theme'
 import { xs, sm } from 'css/media-query'
 
-
 interface ToggleableProps {
   isOpen: boolean
 }
@@ -29,7 +28,7 @@ const Container = styled.div<ToggleableProps>`
     z-index: 999;
     position: fixed;
     left: 24px;
-    top: 120px;
+    bottom: 42px;
     border-radius: 4px;
   `)}
 
