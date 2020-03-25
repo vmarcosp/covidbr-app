@@ -6,7 +6,7 @@ interface ContainerProps {
 }
 
 const Container = styled.div<ContainerProps>`
-  padding: 16px;
+  padding: 14px;
   color: #878787;  
   display: flex;
   font-size: 16px;

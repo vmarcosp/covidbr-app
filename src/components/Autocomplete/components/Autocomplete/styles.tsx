@@ -7,7 +7,7 @@ const Container = styled.div`
   font-family: ${fontFamily};
   z-index: 999;
   ${xs(css`
-    top: 70px;
+    top: 65px;
     width: calc(100%  - 32px);
     left: 50%;
     margin-left: calc((100%  - 32px) / 2 * -1);

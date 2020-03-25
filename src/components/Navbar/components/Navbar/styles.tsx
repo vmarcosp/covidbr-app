@@ -2,16 +2,15 @@ import styled from 'styled-components'
 import { colors } from 'css/theme'
 
 const Logo = styled.img`
-  width: 100px;
+  width: 120px;
 `
 
 const GithubIcon = styled.img`
-  width: 28px;
+  width: 30px;
 `
 
 const Container = styled.div`
-  /* background: ${colors.black}; */
-  padding: 0 24px;
+  padding: 0 16px;
   position: fixed;
   top:0;
   left:0;

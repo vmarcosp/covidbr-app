@@ -9,7 +9,7 @@ export const customStyles: StylesConfig = {
   }),
   valueContainer: (provided: CSSProperties) => ({
     ...provided,
-    padding: 16
+    padding: 14
   }),
   input: (provided: CSSProperties) => ({
     ...provided,
@@ -33,9 +33,9 @@ export const customStyles: StylesConfig = {
   }),
   noOptionsMessage: (provided: CSSProperties) => ({
     ...provided,
-    fontSize: 18,
+    fontSize: 16,
     color: colors.black,
-    padding: 16
+    padding: 14
   }),
   clearIndicator: (provided: CSSProperties) => ({
     ...provided,
