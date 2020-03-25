@@ -6,7 +6,7 @@
 
  <p align="center">
   <a href="https://covidbr.netlify.com/" target="blank">
-    <img src="assets/COVIDBR.svg" width="220" alt="COVIDBR Logo" />
+    <img src="public/COVIDBR.svg" width="220" alt="COVIDBR Logo" />
   </a>
   </p>
   <br />
