@@ -27,7 +27,7 @@ const getCenter = ({ infos }: SelectedData): LatLngTuple => {
 const getZoom = ({ infos }: SelectedData, isMobile: boolean) => {
   if (infos === null) return 4
 
-  return isMobile ? 6 : 7
+  return isMobile ? 6 : 9
 }
 
 export const useHome = () => {

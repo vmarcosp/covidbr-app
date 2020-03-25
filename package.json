@@ -60,6 +60,7 @@
     "components": "./src/components",
     "pages": "./src/pages",
     "css": "./src/css",
-    "types": "./src/types"
+    "types": "./src/types",
+    "assets": "./src/assets"
   }
 }

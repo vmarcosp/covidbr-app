@@ -13,6 +13,9 @@
       ],
       "pages/*": [
         "./src/pages/*"
+      ],
+      "assets/*": [
+        "./src/assets/*"
       ]
     },
     "target": "es5",
