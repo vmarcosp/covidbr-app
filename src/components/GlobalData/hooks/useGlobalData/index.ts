@@ -21,7 +21,10 @@ const formatValues = R.pipe(
 )
 
 export const useGlobalData = () => {
-  const { data } = useQuery<GlobalData>(GET_GLOBAL_DATA_QUERY)
+  const { data, loading } = useQuery<GlobalData>(GET_GLOBAL_DATA_QUERY)
 
-  return formatValues(data)
+  return {
+    globalData: formatValues(data),
+    loading
+  }
 }
