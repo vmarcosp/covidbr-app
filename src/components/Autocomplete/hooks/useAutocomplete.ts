@@ -9,6 +9,7 @@ import {
   CityData,
   QueryResult
 } from './types'
+import { useMount } from 'react-use'
 
 const toOptionState = ({ name, uf }: StateData): Option => ({
   label: name,
@@ -47,6 +48,10 @@ export const useAutocomplete = () => {
     const variables = { name }
     searchData({ variables })
   }
+
+  useMount(() => {
+    requestOptions('')
+  })
 
   return {
     options: toOptions(fromNullable(data)),

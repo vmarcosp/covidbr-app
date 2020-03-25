@@ -27,6 +27,15 @@ const Container = styled.div<ContainerProps>`
     transition: 300ms;
     width: 100%;
     left: 0;
+    @media (max-height: 700px) {
+      height: 400px;
+      bottom: ${props.isOpen ? 0 : -200}px;
+    }
+
+    @media (min-height: 700px) and (max-height: 900px) {
+      height: 450px;
+      bottom: ${props.isOpen ? 0 : -225}px;
+    }
   `)}
 
   ${sm(css`
@@ -40,15 +49,6 @@ const Container = styled.div<ContainerProps>`
     min-height: 455px;
   `)}
 
-  @media (max-height: 700px) {
-    height: 400px;
-    bottom: ${props => props.isOpen ? 0 : -200}px;
-  }
-
-  @media (min-height: 700px) and (max-height: 900px) {
-    height: 450px;
-    bottom: ${props => props.isOpen ? 0 : -225}px;
-  }
 `
 
 const ArrowIcon = styled.img<ArrowProps>`
