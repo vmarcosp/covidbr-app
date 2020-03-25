@@ -10,9 +10,9 @@ interface ContainerProps {
 const Container = styled.div<ContainerProps>`
   background: ${colors.white};
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
-  
   flex-flow: column wrap;
   justify-content: space-around;
+
   ${props => xs(css`
     display: ${props.visible ? 'flex' : 'none'};
     box-sizing: border-box;
@@ -46,31 +46,18 @@ const Container = styled.div<ContainerProps>`
   }
 `
 
-const Arrow = styled.img<ContainerProps>`
-position: absolute;
-width: 42px;
-top: -32px;
-left: 50%;
-margin-left: -21px;
-transition: 200ms;
-transform: ${
-  props => props.isOpen
-    ? css`rotate(180deg)`
-    : css`rotate(0)`
-  };
+const SwipeIcon = styled.div`
+  ${xs(css`
+    width: 100px;
+    height: 4px;
+    border-radius: 4px;
+    opacity: 0.2;
+    background: ${colors.gray};
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    margin-left: -50px;
+  `)}
 `
 
-const ArrowButton = styled.button`
-${
-  sm(css`
-    display: none;
-  `)
-  }
-background: 0;
-outline: 0;
-margin: 0;
-padding: 0;
-border: 0;
-`
-
-export default { Container, Arrow, ArrowButton }
+export default { Container, SwipeIcon }

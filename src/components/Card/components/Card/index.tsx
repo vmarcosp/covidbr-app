@@ -1,6 +1,5 @@
 import React, { ReactNode } from 'react'
 import { useSwipeable, SwipeCallback } from 'react-swipeable'
-import arrowIcon from './arrow-up.svg'
 import Styled from './styles'
 
 interface Card {
@@ -15,6 +14,7 @@ export const Card = ({ children, isOpen, onToggle, visible }: Card) => {
   return (
     <Styled.Container {...handlers} visible={visible} isOpen={isOpen}>
       {children}
+      <Styled.SwipeIcon />
     </Styled.Container>
   )
 }

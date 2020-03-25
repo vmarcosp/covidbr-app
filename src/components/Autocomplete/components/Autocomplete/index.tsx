@@ -27,7 +27,8 @@ export const Autocomplete = ({ onChange, onFocus, onBlur }: AutocompleteProps) =
         onChange={onChange}
         onFocus={onFocus}
         onBlur={onBlur}
-        noOptionsMessage={() => 'Não foram encontradas cidades ou estados'}
+        option
+        noOptionsMessage={() => 'Não há dados para exibir'}
         placeholder='Pesquise por cidade ou estado'
         options={options}
       />
