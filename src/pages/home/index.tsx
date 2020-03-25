@@ -22,7 +22,8 @@ export const Home = () => {
         onBlur={showCard}
         onChange={searchData}
       />
-      <Map>
+
+      <Map zoom={selectedData.infos ? 8 : 4} center={selectedData.infos ? [selectedData.infos.latitude, selectedData.infos.longitude] : undefined}>
         <PinList />
       </Map>
 

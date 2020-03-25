@@ -33,6 +33,7 @@ const Container = styled.div<ContainerProps>`
     left: 24px;
     bottom: 42px;
     border-radius: 4px;
+    min-height: 455px;
   `)}
 
   @media (max-height: 700px) {
