@@ -23,6 +23,8 @@ Essa app é uma parte do projeto de tracking de informações sobre o COVID-19 n
 
 ## Up and Running
 
+> Renomear o **.env.sample** para **.env** e configurar as portas que você quer usar.
+
 ### Dev
 ```sh
 yarn dev # ou npm run dev
