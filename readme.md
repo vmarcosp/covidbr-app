@@ -40,7 +40,7 @@ yarn build # ou npm run build
 
 Esse projeto só foi possível graças as pessoas citadas abaixo:
 - [Wesley Cota](https://github.com/wcota) - Por fornecer os dados municipais e estaduais
-- [Iago Laguna](https://github/iagolaguna) - Contribiu no desenvolvimento dessa API
+- [Iago Laguna](https://github.com/iagolaguna) - Contribiu no desenvolvimento dessa API
 - [Rebecca Gonzalez](https://dribbble.com/rebeccagonzalez) - Desenvolveu todo design do aplicativo web
 - Grupo de Tratamento de Dados do COVID-19 no Telegram - Que mantém os dados atualizados diariamente, independente da plataforma IVIS do Ministério da Saúde
 
