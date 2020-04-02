@@ -4,7 +4,6 @@ import GA from 'react-ga'
 import { useMount } from 'react-use'
 import { ApolloProvider } from '@apollo/react-hooks'
 
-import { colors } from 'css/theme'
 import { GlobalStyles } from 'css/GlobalStyles'
 
 import 'leaflet/dist/leaflet.css'

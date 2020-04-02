@@ -1,8 +1,8 @@
 import React from 'react'
 import { OptionProps } from 'react-select'
 
+import icon from 'assets/pin-icon.svg'
 import Styled from './styles'
-import icon from './pin-icon.svg'
 
 export const Option = ({ innerProps, children, isSelected }: OptionProps<any>) => (
   <Styled.Container selected={isSelected} {...innerProps}>

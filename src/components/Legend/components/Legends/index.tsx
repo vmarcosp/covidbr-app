@@ -8,13 +8,12 @@ type LegendProps = MetricProps & IndicatorProps & {
   indicatorType?: IndicatorType
 }
 
-
-export const Legend = ({ label, value, color, indicatorType = 'vertical' }: LegendProps) => (
-  <Styled.Container>
+export const Legend = ({ label, total, color, indicatorType = 'vertical', ...props }: LegendProps) => (
+  <Styled.Container {...props}>
     {indicatorType === 'circle'
       ? <Styled.CircleIcon color={color} />
       : <Styled.VerticalIcon color={color} />
     }
-    <Metric label={label} value={value} />
+    <Metric label={label} total={total} />
   </Styled.Container>
 )

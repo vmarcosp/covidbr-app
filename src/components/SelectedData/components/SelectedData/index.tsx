@@ -36,11 +36,11 @@ export const SelectedData = ({ data }: SelectedDataProps) => (
         data={[
           {
             color: colors.blue,
-            value: data.casesMS
+            totalValue: data.casesMS
           },
           {
             color: colors.red,
-            value: data.deaths
+            totalValue: data.deaths
           }
         ]}
       />
@@ -56,13 +56,13 @@ export const SelectedData = ({ data }: SelectedDataProps) => (
         key={1}
         color={colors.blue}
         label='Ativos'
-        value={data.casesMS}
+        total={data.casesMS}
       />
       <Legend
         key={2}
         color={colors.red}
         label='Óbitos'
-        value={data.deaths}
+        total={data.deaths}
       />
     </QueueAnim>
   </QueueAnim>

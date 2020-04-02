@@ -6,7 +6,7 @@ const Container = styled.div`
 `
 
 const ChartItem = styled.div<BarChartData>`
-  width: ${props => props.value}%;
+  width: ${props => props.totalValue}%;
   min-width: 12px;
   height: 12px;
   background: ${props => props.color};

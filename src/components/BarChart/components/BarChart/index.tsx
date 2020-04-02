@@ -3,26 +3,25 @@ import Styled from './styles'
 
 export interface BarChartData {
   color: string
-  value: number
+  totalValue: number
 }
 
 interface BarChartProps {
   data: BarChartData[]
 }
 
-const sum = (total: number, item: BarChartData) => item.value + total
+const sum = (total: number, item: BarChartData) => item.totalValue + total
 
-const sumTotal = (items: BarChartData[]) => items.reduce(sum, 0)
-
-const getValue = (value: number, total: number) => (value * 100) / total
+const toPct = (value: number, total: number) => (value * 100) / total
 
 export const BarChart = ({ data }: BarChartProps) => {
-  const total = sumTotal(data)
+  const total = data.reduce(sum, 0)
+
   return (
     <Styled.Container>
       {data.map((item, index) => (
         <Styled.ChartItem
-          value={getValue(item.value, total)}
+          totalValue={toPct(item.totalValue, total)}
           color={item.color}
           key={index}
         />
@@ -30,4 +29,3 @@ export const BarChart = ({ data }: BarChartProps) => {
     </Styled.Container>
   )
 }
-

@@ -1,7 +1,8 @@
-import { useQuery } from '@apollo/react-hooks'
-import { GET_BRAZIL_DATA_QUERY } from './GetBrazilData'
 import * as R from 'rambda'
-import { CovidData } from 'src/types/CovidData'
+import { useQuery } from '@apollo/react-hooks'
+import { CovidData } from 'types/CovidData'
+
+import { GET_BRAZIL_DATA_QUERY } from './GetBrazilData'
 
 const defaultData: CovidData = {
   closedCases: 0,
@@ -21,7 +22,11 @@ const formatValues = R.pipe(
 )
 
 export const useBrazilData = () => {
-  const { data, loading } = useQuery<BrazilDataQuery>(GET_BRAZIL_DATA_QUERY)
+  const { loading, data } = useQuery<BrazilDataQuery>(GET_BRAZIL_DATA_QUERY, {
+    variables: {
+      test: 1
+    }
+  })
 
   return {
     brazilData: formatValues(data),

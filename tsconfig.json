@@ -36,11 +36,10 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react",
-    "typeRoots": [
-      "node_modules/@types/*",
-      "src/types.d.ts"
-    ]
   },
+  "exclude": [
+    "node_modules",
+  ],
   "include": [
     "src"
   ],

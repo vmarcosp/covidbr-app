@@ -4,12 +4,12 @@ import { formatToNumber } from 'brazilian-values'
 
 export interface MetricProps {
   label: string
-  value: number
+  total: number
 }
 
-export const Metric = ({ label, value }: MetricProps) => (
+export const Metric = ({ label, total }: MetricProps) => (
   <Styled.Container>
     <Styled.Label>{label}</Styled.Label>
-    <Styled.Value>{formatToNumber(value)}</Styled.Value>
+    <Styled.Value>{formatToNumber(total)}</Styled.Value>
   </Styled.Container>
 )

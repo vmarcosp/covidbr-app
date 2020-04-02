@@ -16,15 +16,17 @@ import { useBrazilData } from '../../hooks/useBrazilData'
 export const BrazilData = () => {
   const { brazilData, loading } = useBrazilData()
   return (
-    !loading
-      ? <QueueAnim
+    loading
+      ? <Loader data-testid='loader' size={6} />
+      : <QueueAnim
+        data-testid='brazil-data-container'
         type='bottom'
-        delay={600}
+        delay={500}
         duration={800}
       >
         <CardTitle key={1}> Brasil </CardTitle>
 
-        <CardSubtitle key={2}>
+        <CardSubtitle data-testid='card-subtitle' key={2}>
           <Number>{formatToNumber(brazilData.totalCases)}</Number> casos
         </CardSubtitle>
 
@@ -33,15 +35,15 @@ export const BrazilData = () => {
             data={[
               {
                 color: colors.blue,
-                value: brazilData.activeCases
+                totalValue: brazilData.activeCases
               },
               {
                 color: colors.yellow,
-                value: brazilData.totalRecovered
+                totalValue: brazilData.totalRecovered
               },
               {
                 color: colors.red,
-                value: brazilData.totalDeaths
+                totalValue: brazilData.totalDeaths
               }
             ]}
           />
@@ -54,27 +56,29 @@ export const BrazilData = () => {
           duration={600}
         >
           <Legend
+            data-testid='active-cases'
+            label='Ativos'
             key={1}
             color={colors.blue}
-            label='Ativos'
-            value={brazilData.activeCases}
+            total={brazilData.activeCases}
           />
 
           <Legend
+            data-testid='total-recovered'
+            label='Curados'
             key={2}
             color={colors.yellow}
-            label='Curados'
-            value={brazilData.totalRecovered}
+            total={brazilData.totalRecovered}
           />
 
           <Legend
+            data-testid='total-deaths'
+            label='Óbitos'
             key={3}
             color={colors.red}
-            label='Óbitos'
-            value={brazilData.totalDeaths}
+            total={brazilData.totalDeaths}
           />
         </QueueAnim>
       </QueueAnim>
-      : <Loader size={6} />
   )
 }

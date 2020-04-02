@@ -27,14 +27,14 @@ export const PinList = () => {
                 label='Ativos'
                 indicatorType='circle'
                 color={colors.blue}
-                value={pin.casesMS}
+                total={pin.casesMS}
               />
               {isState(pin) &&
                 <Legend
                   indicatorType='circle'
                   label='Óbitos'
                   color={colors.red}
-                  value={(pin as StateData).deaths}
+                  total={(pin as StateData).deaths}
                 />}
             </Styled.ItemsContainer>
           </Popup>

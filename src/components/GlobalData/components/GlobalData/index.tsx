@@ -34,15 +34,15 @@ export const GlobalData = () => {
             data={[
               {
                 color: colors.blue,
-                value: globalData.activeCases
+                totalValue: globalData.activeCases
               },
               {
                 color: colors.yellow,
-                value: globalData.totalRecovered
+                totalValue: globalData.totalRecovered
               },
               {
                 color: colors.red,
-                value: globalData.totalDeaths
+                totalValue: globalData.totalDeaths
               }
             ]}
           />
@@ -58,21 +58,21 @@ export const GlobalData = () => {
             key={1}
             color={colors.blue}
             label='Ativos'
-            value={globalData.activeCases}
+            total={globalData.activeCases}
           />
 
           <Legend
             key={2}
             color={colors.yellow}
             label='Curados'
-            value={globalData.totalRecovered}
+            total={globalData.totalRecovered}
           />
 
           <Legend
             key={3}
             color={colors.red}
             label='Óbitos'
-            value={globalData.totalDeaths}
+            total={globalData.totalDeaths}
           />
         </QueueAnim>
       </QueueAnim>

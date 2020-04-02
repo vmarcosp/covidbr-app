@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "PARCEL_AUTOINSTALL=false parcel public/index.html",
     "build": "NODE_ENV=production parcel build public/index.html --no-source-maps",
-    "linter": "eslint --fix src/**/*.ts"
+    "linter": "eslint --fix src/**/*.ts",
+    "test": "jest --verbose"
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.3",
@@ -31,11 +32,15 @@
     "react-swipeable": "^5.5.1",
     "react-swipeable-views": "^0.13.9",
     "react-use": "^13.27.0",
-    "styled-components": "^5.0.1",
-    "typescript": "~3.7.2"
+    "styled-components": "^5.0.1"
   },
   "devDependencies": {
+    "@apollo/react-testing": "^3.1.3",
+    "@testing-library/jest-dom": "^5.3.0",
+    "@testing-library/react": "^10.0.2",
+    "@testing-library/react-hooks": "^3.2.1",
     "@types/google-map-react": "^1.1.5",
+    "@types/jest": "^25.1.4",
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-chartjs-2": "^2.5.7",
@@ -55,7 +60,12 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-standard": "^4.0.1",
-    "parcel-bundler": "^1.12.4"
+    "jest": "^25.2.4",
+    "mutationobserver-shim": "^0.3.5",
+    "parcel-bundler": "^1.12.4",
+    "ts-jest": "^25.3.0",
+    "typescript": "~3.7.2",
+    "waait": "^1.0.5"
   },
   "alias": {
     "components": "./src/components",

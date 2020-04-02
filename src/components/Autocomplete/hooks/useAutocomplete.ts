@@ -1,4 +1,5 @@
 import { useLazyQuery } from '@apollo/react-hooks'
+import { useMount } from 'react-use'
 import { fromNullable, fold } from 'fp-ts/lib/Option'
 
 import { StatesCitiesQuery } from './StatesCitiesQuery'
@@ -9,12 +10,11 @@ import {
   CityData,
   QueryResult
 } from './types'
-import { useMount } from 'react-use'
 
-const toOptionState = ({ name, uf }: StateData): Option => ({
+const toOptionState = ({ name, uf: id }: StateData): Option => ({
   label: name,
   value: {
-    id: uf,
+    id,
     type: OptionType.STATE
   }
 })
@@ -27,15 +27,11 @@ const toOptionCity = ({ name, uf, id }: CityData): Option => ({
   }
 })
 
-const optionsOfStates = (states: StateData[] = []) => states.map(toOptionState)
-
-const optionsOfCities = (cities: CityData[] = []) => cities.map(toOptionCity)
-
 const toOptions = fold(
-  () => ([]),
-  (data: QueryResult) => [
-    ...optionsOfCities(data.cities),
-    ...optionsOfStates(data.states)
+  () => [],
+  ({ cities, states }: QueryResult) => [
+    ...cities.map(toOptionCity),
+    ...states.map(toOptionState)
   ]
 )
 
