@@ -23,9 +23,7 @@ const formatValues = R.pipe(
 
 export const useBrazilData = () => {
   const { loading, data } = useQuery<BrazilDataQuery>(GET_BRAZIL_DATA_QUERY, {
-    variables: {
-      test: 1
-    }
+    variables: {}
   })
 
   return {

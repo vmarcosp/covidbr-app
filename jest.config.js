@@ -16,5 +16,12 @@ module.exports = {
   modulePathIgnorePatterns: ['<rootDir>/__tests__/helpers'],
   setupFilesAfterEnv: [
     '@testing-library/jest-dom/extend-expect'
+  ],
+  collectCoverageFrom: [
+    '**/*.{ts,tsx}',
+    '!**/node_modules/**',
+    '!**/coverage/**',
+    '!**/index.tsx',
+    '!**/*.d.ts'
   ]
 }

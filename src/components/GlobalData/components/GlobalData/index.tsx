@@ -15,8 +15,10 @@ import { useGlobalData } from '../../hooks/useGlobalData'
 export const GlobalData = () => {
   const { globalData, loading } = useGlobalData()
   return (
-    !loading
-      ? <QueueAnim
+    loading
+      ? <Loader data-testid='loader' size={6} />
+      : <QueueAnim
+        data-testid='global-data-container'
         type='bottom'
         delay={500}
         duration={800}
@@ -25,7 +27,7 @@ export const GlobalData = () => {
           Global
         </CardTitle>
 
-        <CardSubtitle key={2}>
+        <CardSubtitle data-testid='card-subtitle' key={2}>
           <Number>{formatToNumber(globalData.totalCases)}</Number> casos
         </CardSubtitle>
 
@@ -55,6 +57,7 @@ export const GlobalData = () => {
           duration={600}
         >
           <Legend
+            data-testid='active-cases'
             key={1}
             color={colors.blue}
             label='Ativos'
@@ -62,6 +65,7 @@ export const GlobalData = () => {
           />
 
           <Legend
+            data-testid='total-recovered'
             key={2}
             color={colors.yellow}
             label='Curados'
@@ -69,6 +73,7 @@ export const GlobalData = () => {
           />
 
           <Legend
+            data-testid='total-deaths'
             key={3}
             color={colors.red}
             label='Óbitos'
@@ -76,6 +81,5 @@ export const GlobalData = () => {
           />
         </QueueAnim>
       </QueueAnim>
-      : <Loader size={6} />
   )
 }
