@@ -4,7 +4,7 @@ import { render } from '@testing-library/react'
 
 describe('<Legend />', () => {
   test('deve renderizar corretamente uma legenda do tipo "line"', () => {
-    const { container } = render(
+    const { getByTestId } = render(
       <Legend
         indicatorType='line'
         label='Casos'
@@ -13,11 +13,11 @@ describe('<Legend />', () => {
       />
     )
 
-    expect(container).toMatchSnapshot()
+    expect(getByTestId('line-icon')).toBeInTheDocument()
   })
 
-  test('deve renderizar corretamente uma legenda do tipo "circle"', () => {
-    const { container } = render(
+  test('deve renderiar corretamente uma legenda do tipo "circle"', () => {
+    const { getByTestId } = render(
       <Legend
         indicatorType='circle'
         label='Casos'
@@ -26,6 +26,6 @@ describe('<Legend />', () => {
       />
     )
 
-    expect(container).toMatchSnapshot()
+    expect(getByTestId('circle-icon')).toBeInTheDocument()
   })
 })

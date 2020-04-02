@@ -11,8 +11,8 @@ type LegendProps = MetricProps & IndicatorProps & {
 export const Legend = ({ label, total, color, indicatorType = 'line', ...props }: LegendProps) => (
   <Styled.Container {...props}>
     {indicatorType === 'circle'
-      ? <Styled.CircleIcon color={color} />
-      : <Styled.VerticalIcon color={color} />
+      ? <Styled.CircleIcon data-testid='circle-icon' color={color} />
+      : <Styled.LineIcon data-testid='line-icon' color={color} />
     }
     <Metric label={label} total={total} />
   </Styled.Container>
