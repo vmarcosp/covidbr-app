@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BarChart /> deve renderizar corretamente os dados 1`] = `
+<div>
+  <div
+    class="sc-AxjAm jhiTqR"
+  >
+    <div
+      class="sc-AxirZ fTEZtj"
+      color="#000000"
+    />
+    <div
+      class="sc-AxirZ fNDaIA"
+      color="#ffffff"
+    />
+  </div>
+</div>
+`;

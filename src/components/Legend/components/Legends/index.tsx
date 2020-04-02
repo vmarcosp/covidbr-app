@@ -12,7 +12,7 @@ export const Legend = ({ label, total, color, indicatorType = 'line', ...props }
   <Styled.Container {...props}>
     {indicatorType === 'circle'
       ? <Styled.CircleIcon color={color} />
-      : <Styled.VerticalIcon color={label} />
+      : <Styled.VerticalIcon color={color} />
     }
     <Metric label={label} total={total} />
   </Styled.Container>
