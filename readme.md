@@ -1,9 +1,10 @@
-<img src="./badges/badge-branches.svg">
-<img src="./badges/badge-functions.svg">
-<img src="./badges/badge-lines.svg">
-<img src="./badges/badge-statements.svg">
-
-<img src="https://api.netlify.com/api/v1/badges/186f33aa-e78e-4516-bbb0-4a44e08eeafc/deploy-status">
+<div style="display: flex;">
+  <img src="https://api.netlify.com/api/v1/badges/186f33aa-e78e-4516-bbb0-4a44e08eeafc/deploy-status">
+  <img src="./badges/badge-branches.svg">
+  <img src="./badges/badge-functions.svg">
+  <img src="./badges/badge-lines.svg">
+  <img src="./badges/badge-statements.svg">
+</div>
 
 <div align="center">
   <br />
@@ -33,7 +34,7 @@ Essa app é uma parte do projeto de tracking de informações sobre o COVID-19 n
 > Renomear o **.env.sample** para **.env** e configurar as portas que você quer usar.
 
 ### Dev
-```sh
+```sh;
 yarn dev # ou npm run dev
 ```
 
