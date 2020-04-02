@@ -23,6 +23,8 @@ Essa app é uma parte do projeto de tracking de informações sobre o COVID-19 n
 
 ## Up and Running
 
+> Renomear o **.env.sample** para **.env** e configurar as portas que você quer usar.
+
 ### Dev
 ```sh
 yarn dev # ou npm run dev
@@ -37,8 +39,8 @@ yarn build # ou npm run build
 ## Agradecimentos
 
 Esse projeto só foi possível graças as pessoas citadas abaixo:
-- [Wesley Costa](https://github.com/wcota) - Por fornecer os dados municipais e estaduais
-- [Iago Laguna](https://github/iagolaguna) - Contribiu no desenvolvimento dessa API
+- [Wesley Cota](https://github.com/wcota) - Por fornecer os dados municipais e estaduais
+- [Iago Laguna](https://github.com/iagolaguna) - Contribiu no desenvolvimento dessa API
 - [Rebecca Gonzalez](https://dribbble.com/rebeccagonzalez) - Desenvolveu todo design do aplicativo web
 - Grupo de Tratamento de Dados do COVID-19 no Telegram - Que mantém os dados atualizados diariamente, independente da plataforma IVIS do Ministério da Saúde
 
