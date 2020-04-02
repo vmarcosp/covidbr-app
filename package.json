@@ -7,7 +7,8 @@
     "dev": "cross-env PARCEL_AUTOINSTALL=false parcel public/index.html",
     "build": "cross-env NODE_ENV=production parcel build public/index.html --no-source-maps",
     "linter": "eslint --fix src/**/*.ts",
-    "test": "jest --verbose"
+    "test": "jest --verbose",
+    "test:coverage": "yarn test --coverage && jest-coverage-badges --output './badges'"
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.3",
@@ -62,6 +63,7 @@
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-standard": "^4.0.1",
     "jest": "^25.2.4",
+    "jest-coverage-badges": "^1.1.2",
     "mutationobserver-shim": "^0.3.5",
     "parcel-bundler": "^1.12.4",
     "ts-jest": "^25.3.0",
