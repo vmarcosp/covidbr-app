@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "cross-env PARCEL_AUTOINSTALL=false parcel public/index.html",
     "build": "cross-env NODE_ENV=production parcel build public/index.html --no-source-maps",
-    "linter": "eslint --fix src/**/*.ts",
+    "linter": "eslint --fix src/**/*.ts src/**/*.tsx",
     "test": "jest --verbose",
     "test:coverage": "yarn test --coverage && jest-coverage-badges --output './badges'"
   },
