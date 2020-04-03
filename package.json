@@ -10,6 +10,10 @@
     "test": "jest --verbose",
     "test:coverage": "yarn test --coverage && jest-coverage-badges --output './badges'"
   },
+  "husky": {
+    "pre-commit": "yarn linter",
+    "pre-push": "yarn test:coverage"
+  },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.3",
     "apollo-boost": "^0.4.7",
@@ -62,6 +66,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-standard": "^4.0.1",
+    "husky": "^4.2.3",
     "jest": "^25.2.4",
     "jest-coverage-badges": "^1.1.2",
     "mutationobserver-shim": "^0.3.5",
