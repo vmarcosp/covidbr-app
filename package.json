@@ -11,8 +11,10 @@
     "test:coverage": "yarn test --coverage && jest-coverage-badges --output './badges'"
   },
   "husky": {
-    "pre-commit": "yarn linter",
-    "pre-push": "yarn test:coverage"
+    "hooks": {
+      "pre-commit": "yarn linter",
+      "pre-push": "yarn test:coverage"
+    }
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.3",
