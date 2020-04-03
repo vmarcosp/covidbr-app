@@ -31,24 +31,26 @@ Essa app é uma parte do projeto de tracking de informações sobre o COVID-19 n
 
 ## Up and Running
 
-> Renomear o **.env.sample** para **.env** e configurar as portas que você quer usar.
-
-### Dev
-```sh;
-yarn dev # ou npm run dev
-```
-
-### Production
+### Configurações
+Para rodar o projeto localmente, basta seguir os passos descritos abaixo:
+- Clonar o repositório da [API](https://github.com/vmarcosp/covidbr-api) e seguir os passos para rodar a api localmente
+descritos [aqui](https://github.com/vmarcosp/covidbr-api/blob/master/readme.md#configura%C3%A7%C3%B5es)
+- Fazer uma cópia do arquivo `.env.sample` e renomear para `.env`
+- Alterar o valor de API_URL para `http://localhost:<PORTA_CONFIGURADA>`
+  - > Obs.: O valor `<PORTA_CONFIGURADA>` é a porta escolhida no arquivo de configuração `.env` da api, descrito [aqui](https://github.com/vmarcosp/covidbr-api/blob/master/readme.md#configura%C3%A7%C3%B5es)
+ 
+### Rodando a aplicação
+Basta abrir o terminal na pasta do projeto e rodar:
 ```sh
-yarn build # ou npm run build
-
+yarn dev # ou npm run dev
 ```
 
 ## Agradecimentos
 
 Esse projeto só foi possível graças as pessoas citadas abaixo:
 - [Wesley Cota](https://github.com/wcota) - Por fornecer os dados municipais e estaduais
-- [Iago Laguna](https://github.com/iagolaguna) - Contribiu no desenvolvimento dessa API
+- [Iago Laguna](https://github.com/iagolaguna) - Contribiu no desenvolvimento da API
+- [Leonardo Habitzreuter](https://github.com/leonardohabitzreuter) - Contribiu no desenvolvimento da API
 - [Rebecca Gonzalez](https://dribbble.com/rebeccagonzalez) - Desenvolveu todo design do aplicativo web
 - Grupo de Tratamento de Dados do COVID-19 no Telegram - Que mantém os dados atualizados diariamente, independente da plataforma IVIS do Ministério da Saúde
 
