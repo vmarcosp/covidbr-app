@@ -35,8 +35,8 @@ const toPinList = (data: Option<DataQuery>): PinData[] => {
   const states = R.propOr<StateData[], DataQuery, StateData[]>([], 'states', data.value)
 
   return [
-    ...states,
-    ...cities
+    ...states
+    // ...cities
   ]
 }
 
