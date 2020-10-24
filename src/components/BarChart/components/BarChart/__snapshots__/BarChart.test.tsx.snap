@@ -3,16 +3,36 @@
 exports[`<BarChart /> deve renderizar corretamente os dados 1`] = `
 <div>
   <div
-    class="sc-AxjAm jhiTqR"
+    class="sc-bdnylx dwNzoh"
   >
     <div
-      class="sc-AxirZ fTEZtj"
-      color="#000000"
-    />
+      class="sc-gtssRu hTavSR"
+    >
+      <span
+        class="sc-hKFyIo bbRtwB"
+      >
+        67
+        %
+      </span>
+      <div
+        class="sc-dlnjPT jDdvvi"
+        color="#000000"
+      />
+    </div>
     <div
-      class="sc-AxirZ fNDaIA"
-      color="#ffffff"
-    />
+      class="sc-gtssRu gtsAUY"
+    >
+      <span
+        class="sc-hKFyIo bbRtwB"
+      >
+        33
+        %
+      </span>
+      <div
+        class="sc-dlnjPT bkXddq"
+        color="#ffffff"
+      />
+    </div>
   </div>
 </div>
 `;
