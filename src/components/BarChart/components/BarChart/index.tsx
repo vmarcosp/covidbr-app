@@ -1,5 +1,5 @@
 import React from 'react'
-import Styled from './styles'
+import S from './styles'
 
 export interface BarChartData {
   color: string
@@ -18,14 +18,15 @@ export const BarChart = ({ data }: BarChartProps) => {
   const total = data.reduce(sum, 0)
 
   return (
-    <Styled.Container>
+    <S.Container>
       {data.map((item, index) => (
-        <Styled.ChartItem
-          totalValue={toPct(item.totalValue, total)}
-          color={item.color}
-          key={index}
-        />
+        <S.ChartBarContainer totalValue={toPct(item.totalValue, total)} key={index}>
+          <S.ChartPercentage>
+            {toPct(item.totalValue, total).toFixed(0)}%
+          </S.ChartPercentage>
+          <S.ChartItem color={item.color} />
+        </S.ChartBarContainer>
       ))}
-    </Styled.Container>
+    </S.Container>
   )
 }

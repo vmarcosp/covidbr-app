@@ -6,6 +6,7 @@ export interface GlobalDataContainerProps {
 }
 
 const commonContainerStyle = css`
+  width: 100%;
   box-sizing: border-box;
   ${xs(css`
     padding: 16px;
@@ -18,11 +19,11 @@ const commonContainerStyle = css`
 `
 
 const GlobalDataContainer = styled.div<GlobalDataContainerProps>`
+  ${commonContainerStyle};
   ${props => xs(css`
     opacity: ${props.show ? 1 : 0};
     transition: 400ms;
   `)}
-  ${commonContainerStyle};
 `
 
 const DataContainer = styled.div`
