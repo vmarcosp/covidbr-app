@@ -10,22 +10,21 @@ interface BarChartProps {
   data: BarChartData[]
 }
 
-const sum = (total: number, item: BarChartData) => item.totalValue + total
-
-const toPct = (value: number, total: number) => (value * 100) / total
+const sumData = (total: number, item: BarChartData) => item.totalValue + total
+const toPercentage = (value: number, total: number) => (value * 100) / total
 
 export const BarChart = ({ data }: BarChartProps) => {
-  const total = data.reduce(sum, 0)
+  const total = data.reduce(sumData, 0)
 
   return (
     <S.Container>
-      {data.map((item, index) => (
-        <S.ChartBarContainer totalValue={toPct(item.totalValue, total)} key={index}>
-          <S.ChartPercentage>
-            {toPct(item.totalValue, total).toFixed(0)}%
-          </S.ChartPercentage>
-          <S.ChartItem color={item.color} />
-        </S.ChartBarContainer>
+      {data.map(({ color, totalValue }, index) => (
+        <S.BarChartContainer totalValue={toPercentage(totalValue, total)} key={index}>
+          <S.BarChartPercentage>
+            {toPercentage(totalValue, total).toFixed(0)}%
+          </S.BarChartPercentage>
+          <S.BarChartProgress color={color} />
+        </S.BarChartContainer>
       ))}
     </S.Container>
   )

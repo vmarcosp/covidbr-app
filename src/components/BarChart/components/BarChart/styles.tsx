@@ -5,20 +5,20 @@ const Container = styled.div`
   width: 100%;
   display: flex;
 `
-const ChartBarContainer = styled.div<{totalValue: number}>`
+const BarChartContainer = styled.div<{totalValue: number}>`
   width: ${({ totalValue }) => totalValue.toFixed(0)}%;
   display: flex;
   flex-direction: column;
   margin-right: 4px;
 `
 
-const ChartItem = styled.div<{color: string}>`
+const BarChartProgress = styled.div<{color: string}>`
   height: 12px;
   border-radius: 10px;
   background: ${({ color }) => color};
 `
 
-const ChartPercentage = styled.span`
+const BarChartPercentage = styled.span`
   margin-bottom: 4px;
   font-family: ${fontFamily};
   font-weight: bold;
@@ -26,4 +26,4 @@ const ChartPercentage = styled.span`
   line-height: 12px;
 `
 
-export default { Container, ChartItem, ChartBarContainer, ChartPercentage }
+export default { Container, BarChartProgress, BarChartContainer, BarChartPercentage }
