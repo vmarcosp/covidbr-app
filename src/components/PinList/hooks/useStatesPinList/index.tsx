@@ -36,7 +36,7 @@ const toPinList = (data: Option<DataQuery>): PinData[] => {
 
   return [
     ...states
-    // ...cities
+    ...cities
   ]
 }
 
